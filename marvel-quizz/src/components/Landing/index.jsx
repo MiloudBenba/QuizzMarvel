@@ -1,4 +1,6 @@
+// @ts-nocheck
 import React, { useRef, useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 
 const Landing = () => {
   // const useRef call
@@ -36,16 +38,19 @@ const Landing = () => {
   const displayBtn = btn && (
     <>
       <div onMouseOver={setLeftImg} onMouseOut={clearImg} className="leftBox">
-        <button className="btn-welcome">Inscription</button>
+        <Link className="btn-welcome" to="/signup">
+          Inscription
+        </Link>
       </div>
       <div className="rightBox">
-        <button
+        <Link
           onMouseOver={setRightImg}
           onMouseOut={clearImg}
           className="btn-welcome"
+          to="/login"
         >
           Connexion
-        </button>
+        </Link>
       </div>
     </>
   );
