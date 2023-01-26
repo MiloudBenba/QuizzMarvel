@@ -1,6 +1,6 @@
 // @ts-nocheck
 import React from "react";
-import { BrowserRouter, Route, Router, Routes, Link } from "react-router-dom";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 import "../../App.css";
 import ErrorPage from "../ErrorPage";
 import Footer from "../Footer";
