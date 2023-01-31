@@ -5,7 +5,7 @@ import { onAuthStateChanged } from "firebase/auth";
 import { auth } from "../Firebase/firebaseConfig";
 import { useNavigate } from "react-router-dom";
 
-const Welcome = (props) => {
+const Welcome = () => {
   const [userSession, setUserSession] = useState(null);
   const navigate = useNavigate();
 

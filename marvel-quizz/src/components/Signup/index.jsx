@@ -5,7 +5,7 @@ import { createUserWithEmailAndPassword } from "firebase/auth";
 import { auth } from "../Firebase/firebaseConfig";
 import { Link, useNavigate } from "react-router-dom";
 
-const Signup = (props) => {
+const Signup = () => {
   const data = {
     pseudo: "",
     email: "",
@@ -115,9 +115,11 @@ const Signup = (props) => {
               {btn}
             </form>
             <div className="linkContainer">
-              <Link className="simpleLink" to="/login">
-                Vous avez déjà un compte? Connectez-vous.
-              </Link>
+              <span>
+                <Link className="simpleLink" to="/login">
+                  Vous avez déjà un compte? Connectez-vous.
+                </Link>
+              </span>
             </div>
           </div>
         </div>
