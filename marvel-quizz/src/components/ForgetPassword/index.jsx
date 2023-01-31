@@ -1,13 +1,13 @@
 // @ts-nocheck
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { auth } from "../Firebase/firebaseConfig";
 import { sendPasswordResetEmail } from "firebase/auth";
 
 const ForgetPassword = () => {
   const [email, setEmail] = useState("");
-  const [success, setSuccess] = useState(null);
-  const [error, setError] = useState(null);
+  const [success, setSuccess] = useState(undefined);
+  const [error, setError] = useState(undefined);
   const navigate = useNavigate();
 
   // css style for span popUp success when email sent
@@ -32,7 +32,7 @@ const ForgetPassword = () => {
         setSuccess(
           `Un email pour réinitialiser votre mot de passe vient d'être envoyé à l'adresse ${email}`
         );
-        setEmail(null);
+        setEmail(undefined);
 
         setTimeout(() => {
           navigate("/login");
@@ -41,7 +41,7 @@ const ForgetPassword = () => {
       .catch(() => {
         // Error message alert
         setError("L'adresse email n'est pas reconnue, veuillez vérifier.");
-        setEmail(null);
+        setEmail(undefined);
       });
   };
 
